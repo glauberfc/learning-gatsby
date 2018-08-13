@@ -10,8 +10,22 @@ class Counter extends React.Component {
       <div>
         <h1>Counter</h1>
         <p>current count: {this.state.count}</p>
-        <button>plus</button>
-        <button>minus</button>
+        <button
+          children="minus"
+          onClick={() =>
+            this.setState(prevState => ({
+              count: prevState.count - 1
+            }))
+          }
+        />
+        <button
+          children="plus"
+          onClick={() =>
+            this.setState(prevState => ({
+              count: prevState.count + 1
+            }))
+          }
+        />
       </div>
     )
   }
